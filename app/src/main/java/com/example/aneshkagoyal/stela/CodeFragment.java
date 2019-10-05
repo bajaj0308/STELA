@@ -1,12 +1,12 @@
 package com.example.aneshkagoyal.stela;
 
 import android.support.v7.app.AppCompatActivity;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 
-public class AboutFragment extends Fragment {
+public class CodeFragment extends Fragment {
 
-    public AboutFragment() {
+    public CodeFragment() {
         // Required empty public constructor
     }
 }

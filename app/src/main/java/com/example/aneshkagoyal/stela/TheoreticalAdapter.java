@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
+
 public class TheoreticalAdapter extends FragmentPagerAdapter {
     private Context mContext;
 
@@ -13,30 +14,26 @@ public class TheoreticalAdapter extends FragmentPagerAdapter {
         mContext = context;
     }
 
+    private String[] tabTitles = new String[] {"About", "Interfacing Diagram", "Program Code" };
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return tabTitles[position];
+    }
+
     @Override
     public Fragment getItem(int position) {
         if (position == 0) {
             return new AboutFragment();
         } else if (position == 1) {
             return new DiagramFragment();
-        } else if (position == 2) {
+        } else {
             return new CodeFragment();
         }
     }
 
-    @Override
-    public CharSequence getPageTitle(int position) {
-        if (position == 0) {
-            return "About";
-        } else if (position == 1) {
-            return "Interfacing Diagram";
-        } else if (position == 2) {
-            return "Program Code";
-        }
-    }
 
     @Override
     public int getCount() {
-        return 6;
+        return 3;
     }
 }
