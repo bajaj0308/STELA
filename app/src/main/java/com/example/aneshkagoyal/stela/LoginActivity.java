@@ -63,7 +63,7 @@ public class LoginActivity extends AppCompatActivity {
 
                             } else {
 
-                                startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                                startActivity(new Intent(LoginActivity.this, Student_dashboard.class));
                             }
                         }
                     });
