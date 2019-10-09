@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CourseContent">
+    <Button
+        android:id="@+id/theory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="Theory"
+        android:background="@drawable/rounded_button"
+        android:layout_centerInParent="true"
+        android:layout_above="@id/practice"
+        android:textColor="#ffffff" />
+
+    <Button
+        android:id="@+id/practice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="Practice Module"
+        android:background="@drawable/rounded_button"
+        android:textColor="#ffffff"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/assessment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:background="@drawable/rounded_button"
+        android:textColor="#ffffff"
+        android:text="Assessment"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="16dp"
+        android:layout_below="@id/practice"/>
+
+</RelativeLayout>
