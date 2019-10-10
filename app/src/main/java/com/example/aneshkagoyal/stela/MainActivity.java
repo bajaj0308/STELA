@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 if (user != null) {
                     //Toast.makeText(MainActivity.this, "You are logged in", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(MainActivity.this, Student_dashboard.class));
+                    finish();
                 } else {
                     //Toast.makeText(MainActivity.this, "Plz login", Toast.LENGTH_SHORT).show();
 
@@ -68,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
                             } else {
 
                                 startActivity(new Intent(MainActivity.this, Student_dashboard.class));
+                                //finish();
                             }
                         }
                     });

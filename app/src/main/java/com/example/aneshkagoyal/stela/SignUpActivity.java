@@ -74,6 +74,7 @@ public class SignUpActivity extends AppCompatActivity {
                                 ref.child(mfirebaseAuth.getCurrentUser().getUid()).setValue(student);
 
                                 startActivity(new Intent(SignUpActivity.this,MainActivity.class));
+                                finish();
                             }
                         }
                     });
