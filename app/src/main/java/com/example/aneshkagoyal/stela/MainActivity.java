@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseAuth mfirebaseAuth;
     Button signin;
     TextView signup;
+    TextView forgot_pass;
     private FirebaseAuth.AuthStateListener mfirebaseListener;
 
     @Override
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         log_password = findViewById(R.id.log_pass);
         signin = findViewById(R.id.signin);
         signup = findViewById(R.id.log_signup);
+        forgot_pass = findViewById(R.id.forgotpass);
         mfirebaseAuth = FirebaseAuth.getInstance();
         mfirebaseListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -80,6 +82,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, SignUpActivity.class));
+            }
+        });
+        forgot_pass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,ForgotPasswordActivity.class));
+                //finish();
+
             }
         });
     }
