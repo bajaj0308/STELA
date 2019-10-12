@@ -11,9 +11,10 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:text="Theory"
+        android:background="@drawable/rounded_button"
         android:layout_centerInParent="true"
         android:layout_above="@id/practice"
-        android:textColor="#1F2E5A" />
+        android:textColor="#ffffff" />
 
     <Button
         android:id="@+id/practice"
@@ -21,8 +22,9 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:text="Practice Module"
+        android:background="@drawable/rounded_button"
+        android:textColor="#ffffff"
         android:layout_centerInParent="true"
-        android:textColor="#1F2E5A"
         android:layout_marginTop="16dp" />
 
     <Button
@@ -30,9 +32,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
+        android:background="@drawable/rounded_button"
+        android:textColor="#ffffff"
         android:text="Assessment"
         android:layout_centerInParent="true"
-        android:textColor="#1F2E5A"
         android:layout_marginTop="16dp"
         android:layout_below="@id/practice"/>
 

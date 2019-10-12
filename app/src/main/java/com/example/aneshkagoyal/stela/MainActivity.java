@@ -1,10 +1,13 @@
 package com.example.aneshkagoyal.stela;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,87 +18,90 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
-
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
-    EditText email;
-    EditText password;
-    EditText eroll;
-    EditText reg_name;
-    EditText branch;
-    EditText year;
-    Button signup;
-    TextView signin;
+    EditText log_email;
+    EditText log_password;
     FirebaseAuth mfirebaseAuth;
-    DatabaseReference ref;
+    Button signin;
+    TextView signup;
+    TextView forgot_pass;
+    private FirebaseAuth.AuthStateListener mfirebaseListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        email = findViewById(R.id.reg_email);
-        password = findViewById(R.id.reg_pass);
-        eroll = findViewById(R.id.reg_enroll);
-        reg_name = findViewById(R.id.reg_name);
-        branch = findViewById(R.id.reg_branch);
-        year = findViewById(R.id.reg_year);
-        signup = findViewById(R.id.sign_up);
-        signin = findViewById(R.id.reg_sign_in);
+        log_email = findViewById(R.id.log_email);
+        log_password = findViewById(R.id.log_pass);
+        signin = findViewById(R.id.signin);
+        signup = findViewById(R.id.log_signup);
+        forgot_pass = findViewById(R.id.forgotpass);
         mfirebaseAuth = FirebaseAuth.getInstance();
-        ref = FirebaseDatabase.getInstance().getReference().child("Student");
-        signup.setOnClickListener(new View.OnClickListener() {
+        mfirebaseListener = new FirebaseAuth.AuthStateListener() {
             @Override
-            public void onClick(View view) {
-                final String em = email.getText().toString();
-                String pw = password.getText().toString();
-                final String er = eroll.getText().toString();
-                final String nm = reg_name.getText().toString();
-               final String br = branch.getText().toString();
-                final String yr = year.getText().toString();
-                mfirebaseAuth = FirebaseAuth.getInstance();
-                if(em.isEmpty()||pw.isEmpty()||er.isEmpty()||nm.isEmpty()||br.isEmpty()||yr.isEmpty()){
-                    Toast.makeText(MainActivity.this,"Add all info",Toast.LENGTH_SHORT).show();
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = mfirebaseAuth.getCurrentUser();
+                if (user != null) {
+                    //Toast.makeText(MainActivity.this, "You are logged in", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(MainActivity.this, Student_dashboard.class));
+                    finish();
+                } else {
+                    //Toast.makeText(MainActivity.this, "Plz login", Toast.LENGTH_SHORT).show();
 
                 }
-                else{
-                    mfirebaseAuth.createUserWithEmailAndPassword(em,pw).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if(!task.isSuccessful()){
-                                Toast.makeText(MainActivity.this,task.getException().getMessage(),Toast.LENGTH_SHORT).show();
-
-                            }
-                            else{
-                                UserStudent student = new UserStudent(
-                                        nm,er,br,yr,em
-                                );
-                                ref.child(mfirebaseAuth.getCurrentUser().getUid()).setValue(student);
-
-                                startActivity(new Intent(MainActivity.this,HomeActivity.class));
-                            }
-                        }
-                    });
-
-                }
-
-
-
             }
-        });
-
+        };
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this,LoginActivity.class));
+                final String em = log_email.getText().toString();
+                String pw = log_password.getText().toString();
+                if (em.isEmpty() || pw.isEmpty()) {
+                    Toast.makeText(MainActivity.this, "Add all info", Toast.LENGTH_SHORT).show();
+
+                } else {
+                    mfirebaseAuth.signInWithEmailAndPassword(em, pw).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (!task.isSuccessful()) {
+                                Toast.makeText(MainActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+
+                            } else {
+
+                                startActivity(new Intent(MainActivity.this, Student_dashboard.class));
+                                //finish();
+                            }
+                        }
+                    });
+                }
             }
         });
+        signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, SignUpActivity.class));
+            }
+        });
+        forgot_pass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,ForgotPasswordActivity.class));
+                //finish();
 
-
-
-
+            }
+        });
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mfirebaseAuth.addAuthStateListener(mfirebaseListener);
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mfirebaseAuth.removeAuthStateListener(mfirebaseListener);
+    }
 }
