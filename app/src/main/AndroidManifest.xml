@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BaseActivity"></activity>
+        <activity android:name=".BaseActivity" />
         <activity android:name=".CodeFragment" />
         <activity android:name=".DiagramFragment" />
         <activity android:name=".SignUpActivity" />
@@ -31,6 +31,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ForgotPasswordActivity"></activity>
     </application>
 
 </manifest>

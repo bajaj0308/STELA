@@ -23,6 +23,7 @@ public class BaseActivity extends AppCompatActivity {
             case R.id.sign_out :
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(BaseActivity.this, MainActivity.class));
+                finish();
                 return true;
 
         }

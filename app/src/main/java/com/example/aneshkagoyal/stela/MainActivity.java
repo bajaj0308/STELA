@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseAuth mfirebaseAuth;
     Button signin;
     TextView signup;
+    TextView forgot_pass;
     private FirebaseAuth.AuthStateListener mfirebaseListener;
 
     @Override
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         log_password = findViewById(R.id.log_pass);
         signin = findViewById(R.id.signin);
         signup = findViewById(R.id.log_signup);
+        forgot_pass = findViewById(R.id.forgotpass);
         mfirebaseAuth = FirebaseAuth.getInstance();
         mfirebaseListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -44,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 if (user != null) {
                     //Toast.makeText(MainActivity.this, "You are logged in", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(MainActivity.this, Student_dashboard.class));
+                    finish();
                 } else {
                     //Toast.makeText(MainActivity.this, "Plz login", Toast.LENGTH_SHORT).show();
 
@@ -68,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
                             } else {
 
                                 startActivity(new Intent(MainActivity.this, Student_dashboard.class));
+                                //finish();
                             }
                         }
                     });
@@ -78,6 +82,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, SignUpActivity.class));
+            }
+        });
+        forgot_pass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,ForgotPasswordActivity.class));
+                //finish();
+
             }
         });
     }
