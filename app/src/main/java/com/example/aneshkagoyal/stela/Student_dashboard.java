@@ -7,7 +7,10 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +20,11 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Student_dashboard extends BaseActivity {
     DatabaseReference reff;
@@ -32,8 +40,12 @@ public class Student_dashboard extends BaseActivity {
         final TextView st_roll = (TextView) findViewById(R.id.roll_no);
         final TextView st_branch = (TextView) findViewById(R.id.branch);
         final TextView st_year = (TextView) findViewById(R.id.year);
+        final Button registercourses = findViewById(R.id.register_courses);
+       final Spinner dropdown = findViewById(R.id.course_drop);
         auth = FirebaseAuth.getInstance();
         reff = FirebaseDatabase.getInstance().getReference().child("Student").child(auth.getCurrentUser().getUid());
+       // Map<String,Object> mp = new HashMap<>();
+        final List<String> arr = new ArrayList<>();
 
         reff.addValueEventListener(new ValueEventListener() {
             @Override
@@ -42,6 +54,17 @@ public class Student_dashboard extends BaseActivity {
                 String br = dataSnapshot.child("branch").getValue().toString();
                 String yr = dataSnapshot.child("year").getValue().toString();
                 String er = dataSnapshot.child("eroll").getValue().toString();
+                if(dataSnapshot.hasChild("Course")){
+                    for(DataSnapshot ds: dataSnapshot.child("Course").getChildren()){
+                       String mp = ds.getValue().toString();
+                       arr.add(mp);
+
+
+                    }
+                    ArrayAdapter<String> adapter = new ArrayAdapter<>(Student_dashboard.this, android.R.layout.simple_spinner_dropdown_item, arr);
+//set the spinners adapter to the previously created one.
+                    dropdown.setAdapter(adapter);
+                }
                 st_name.setText(nm);
                 st_branch.setText(br);
                 st_roll.setText(er);
@@ -65,6 +88,12 @@ public class Student_dashboard extends BaseActivity {
                 //i.putExtra("floor", "ground");
                 startActivity(i);
                 finish();
+            }
+        });
+        registercourses.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Student_dashboard.this,Course.class));
             }
         });
     }

@@ -30,6 +30,8 @@ public class SignUpActivity extends AppCompatActivity {
     TextView signin;
     FirebaseAuth mfirebaseAuth;
     DatabaseReference ref;
+    EditText mob;
+    EditText address;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,8 @@ public class SignUpActivity extends AppCompatActivity {
         year = findViewById(R.id.reg_year);
         signup = findViewById(R.id.sign_up);
         signin = findViewById(R.id.reg_sign_in);
+        mob = findViewById(R.id.reg_mob);
+        address = findViewById(R.id.reg_addr);
         mfirebaseAuth = FirebaseAuth.getInstance();
         ref = FirebaseDatabase.getInstance().getReference().child("Student");
         signup.setOnClickListener(new View.OnClickListener() {
@@ -54,8 +58,10 @@ public class SignUpActivity extends AppCompatActivity {
                 final String nm = reg_name.getText().toString();
                final String br = branch.getText().toString();
                 final String yr = year.getText().toString();
+                final String mobile = mob.getText().toString();
+                final String add = address.getText().toString();
                 mfirebaseAuth = FirebaseAuth.getInstance();
-                if(em.isEmpty()||pw.isEmpty()||er.isEmpty()||nm.isEmpty()||br.isEmpty()||yr.isEmpty()){
+                if(em.isEmpty()||pw.isEmpty()||er.isEmpty()||nm.isEmpty()||br.isEmpty()||yr.isEmpty()||mobile.isEmpty()||add.isEmpty()){
                     Toast.makeText(SignUpActivity.this,"Add all info",Toast.LENGTH_SHORT).show();
 
                 }
@@ -69,7 +75,7 @@ public class SignUpActivity extends AppCompatActivity {
                             }
                             else{
                                 UserStudent student = new UserStudent(
-                                        nm,er,br,yr,em
+                                        nm,er,br,yr,em,mobile,add
                                 );
                                 ref.child(mfirebaseAuth.getCurrentUser().getUid()).setValue(student);
 
