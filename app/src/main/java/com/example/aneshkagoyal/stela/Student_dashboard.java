@@ -84,7 +84,7 @@ public class Student_dashboard extends BaseActivity {
         courseb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Student_dashboard.this, CourseContent.class);
+                Intent i = new Intent(Student_dashboard.this, ExperimentListTheory.class);
                 //i.putExtra("floor", "ground");
                 startActivity(i);
                 finish();

@@ -1,13 +1,12 @@
 package com.example.aneshkagoyal.stela;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.view.LayoutInflater;
+import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -16,22 +15,35 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
-public class DiagramFragment extends Fragment {
-
-    public DiagramFragment() {
-        // Required empty public constructor
-    }
+public class AboutActivity extends AppCompatActivity {
 
     ImageView imageView;
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference();
-    private DatabaseReference first = databaseReference.child("Courses").child("IoT").child("Experiment-1").child("Interfacing-Diagram");
+    private DatabaseReference first;
 
-    //  @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.root_view_file_image, container, false);
-        imageView = (ImageView) rootView.findViewById(R.id.DiagramFragment_ImageView);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_about);
+
+        final String num = getIntent().getStringExtra("Expt_number");
+        Log.v("Num value in AboutActivity is ", num);
+        String expt_num = "Experiment-"+num;
+        Log.v("expt_num value in AboutActivity is ", expt_num);
+        first = databaseReference.child("Courses").child("IoT").child(expt_num).child("About");
+        imageView = (ImageView) findViewById(R.id.DiagramFragment_ImageView);
+
+        Button nextButton = (Button) findViewById(R.id.ToDiagramActivity);
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(AboutActivity.this, DiagramActivity.class);
+                //i.putExtra("floor", "ground");
+                i.putExtra("Expt_number", num);
+                startActivity(i);
+            }
+        });
 
         //TODO : set image for imageview by fetching data from firebase
         //Creating connection with database
@@ -47,7 +59,5 @@ public class DiagramFragment extends Fragment {
 
             }
         });
-        // return super.onCreateView(inflater, container, savedInstanceState);
-        return rootView;
     }
 }
