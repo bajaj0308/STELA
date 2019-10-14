@@ -4,39 +4,94 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bkgcolor"
     tools:context=".CourseContent">
-    <Button
-        android:id="@+id/theory"
+    <LinearLayout
+        android:id="@+id/l1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:text="Theory"
-        android:background="@drawable/rounded_button"
         android:layout_centerInParent="true"
-        android:layout_above="@id/practice"
-        android:textColor="#ffffff" />
+        android:orientation="vertical"
+        android:layout_margin="20dp"
+        android:layout_above="@id/l2">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/theory_img"
+            android:src="@drawable/theory"
+            android:maxWidth="50dp"
+            android:maxHeight="50dp"
+            android:adjustViewBounds="true"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            />
+        <Button
+            android:fontFamily="@font/arima_madurai_medium"
+            android:id="@+id/theory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Theory"
+            android:background="@drawable/rounded_button"
+            android:textColor="#ffffff" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/practice"
+    <LinearLayout
+        android:id="@+id/l2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:text="Practice Module"
-        android:background="@drawable/rounded_button"
-        android:textColor="#ffffff"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="16dp" />
+        android:orientation="vertical"
+        android:layout_margin="20dp"
+        android:layout_centerInParent="true">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/practice_img"
+            android:src="@drawable/practice"
+            android:maxWidth="50dp"
+            android:maxHeight="50dp"
+            android:adjustViewBounds="true"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            />
+        <Button
+            android:id="@+id/practice"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Practice Module"
+            android:background="@drawable/rounded_button"
+            android:textColor="#ffffff"
+             />
+    </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/l3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/l2"
+        android:orientation="vertical"
+        android:layout_margin="20dp"
+        android:layout_centerInParent="true">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/assessment_img"
+            android:src="@drawable/assessment"
+            android:maxWidth="50dp"
+            android:maxHeight="50dp"
+            android:adjustViewBounds="true"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            />
     <Button
         android:id="@+id/assessment"
+        android:fontFamily="@font/arima_madurai_medium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
         android:background="@drawable/rounded_button"
         android:textColor="#ffffff"
         android:text="Assessment"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="16dp"
-        android:layout_below="@id/practice"/>
+        />
+    </LinearLayout>
 
 </RelativeLayout>
