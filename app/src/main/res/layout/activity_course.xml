@@ -4,29 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bkgcolor"
     tools:context=".Course">
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/course_id"
+        android:fontFamily="@font/arima_madurai_medium"
+        android:layout_above="@id/course_pass"
+        android:layout_margin="20dp"
         android:hint="course_id"/>
 
     <EditText
         android:id="@+id/course_pass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="73dp"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/arima_madurai_medium"
+        android:layout_margin="20dp"
         android:hint="course_password" />
 
     <Button
         android:id="@+id/reg_course"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_below="@id/course_pass"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="176dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/arima_madurai_medium"
+        android:textColor="#ffffff"
+        android:layout_margin="20dp"
         android:text="register" />
 
 </RelativeLayout>

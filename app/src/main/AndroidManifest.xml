@@ -24,14 +24,15 @@
         <activity android:name=".CourseContent" />
         <activity android:name=".Theoretical" />
         <activity android:name=".AboutFragment" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" />
+        <activity android:name=".ForgotPasswordActivity" />
+        <activity android:name=".Main1Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ForgotPasswordActivity"></activity>
     </application>
 
 </manifest>

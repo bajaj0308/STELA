@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,6 +33,7 @@ public class SignUpActivity extends AppCompatActivity {
     DatabaseReference ref;
     EditText mob;
     EditText address;
+    CheckBox checkBox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,7 @@ public class SignUpActivity extends AppCompatActivity {
         signin = findViewById(R.id.reg_sign_in);
         mob = findViewById(R.id.reg_mob);
         address = findViewById(R.id.reg_addr);
+        checkBox = (CheckBox) findViewById(R.id.checkBox);
         mfirebaseAuth = FirebaseAuth.getInstance();
         ref = FirebaseDatabase.getInstance().getReference().child("Student");
         signup.setOnClickListener(new View.OnClickListener() {
@@ -73,6 +76,10 @@ public class SignUpActivity extends AppCompatActivity {
                                 Toast.makeText(SignUpActivity.this,task.getException().getMessage(),Toast.LENGTH_SHORT).show();
 
                             }
+//                            else if(!checkBox.isChecked())
+//                            {
+//                                Toast.makeText(SignUpActivity.this,"Please tick the Terms and Conditions",Toast.LENGTH_SHORT);
+//                            }
                             else{
                                 UserStudent student = new UserStudent(
                                         nm,er,br,yr,em,mobile,add

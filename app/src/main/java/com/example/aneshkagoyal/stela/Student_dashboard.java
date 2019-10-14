@@ -1,6 +1,7 @@
 package com.example.aneshkagoyal.stela;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -49,6 +50,7 @@ public class Student_dashboard extends BaseActivity {
 
         reff.addValueEventListener(new ValueEventListener() {
             @Override
+            @NonNull
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nm = dataSnapshot.child("name").getValue().toString();
                 String br = dataSnapshot.child("branch").getValue().toString();
