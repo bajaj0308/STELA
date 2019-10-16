@@ -14,9 +14,9 @@
     android:orientation="vertical">
 
     <ImageView
-        android:src="@drawable/btn_round"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
         android:id="@+id/DiagramFragment_ImageView">
     </ImageView>
 

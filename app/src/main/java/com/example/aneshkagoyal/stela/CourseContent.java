@@ -1,7 +1,6 @@
 package com.example.aneshkagoyal.stela;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -33,14 +32,16 @@ public class CourseContent extends BaseActivity {
                 startActivity(i);
             }
         });
-//        practiceb.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i = new Intent(CourseContent.this, ExperimentListPractice.class);
-//                //i.putExtra("floor", "ground");
-//                startActivity(i);
-//            }
-//        });
+        practiceb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //String nextScreen = "PracticeActivityForExpt";
+                String num = getIntent().getStringExtra("Expt Number");
+                Intent i = new Intent(CourseContent.this, PracticeActivityForExpt1.class);
+                i.putExtra("Expt_number", num);
+                startActivity(i);
+            }
+        });
 //        assessment.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {

@@ -19,9 +19,9 @@ public class ExperimentListTheory extends AppCompatActivity {
         Button expt3 = (Button) findViewById(R.id.exp3);
         Button expt4 = (Button) findViewById(R.id.exp4);
         Button expt5 = (Button) findViewById(R.id.exp5);
-//        Button expt6 = (Button) findViewById(R.id.exp6);
-//        Button expt7 = (Button) findViewById(R.id.exp7);
-//        Button expt8 = (Button) findViewById(R.id.exp8);
+        Button expt6 = (Button) findViewById(R.id.exp6);
+        Button expt7 = (Button) findViewById(R.id.exp7);
+        Button expt8 = (Button) findViewById(R.id.exp8);
         expt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,30 +63,30 @@ public class ExperimentListTheory extends AppCompatActivity {
                 startActivity(i);
             }
         });
-//        expt6.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i = new Intent(ExperimentListTheory.this, CourseContent.class);
-//                i.putExtra("Expt Number", "6");
-//                startActivity(i);
-//            }
-//        });
-//        expt7.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i = new Intent(ExperimentListTheory.this, CourseContent.class);
-//                i.putExtra("Expt Number", "7");
-//                startActivity(i);
-//            }
-//        });
-//        expt8.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i = new Intent(ExperimentListTheory.this, CourseContent.class);
-//                i.putExtra("Expt Number", "8");
-//                startActivity(i);
-//            }
-//        });
+        expt6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(ExperimentListTheory.this, CourseContent.class);
+                i.putExtra("Expt Number", "6");
+                startActivity(i);
+            }
+        });
+        expt7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(ExperimentListTheory.this, CourseContent.class);
+                i.putExtra("Expt Number", "7");
+                startActivity(i);
+            }
+        });
+        expt8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(ExperimentListTheory.this, CourseContent.class);
+                i.putExtra("Expt Number", "8");
+                startActivity(i);
+            }
+        });
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
@@ -102,36 +102,3 @@ public class ExperimentListTheory extends AppCompatActivity {
 
 
 
-
-//<Button
-//        android:id="@+id/exp6"
-//                android:layout_width="match_parent"
-//                android:layout_height="wrap_content"
-//                android:layout_marginRight="16dp"
-//                android:layout_marginLeft="16dp"
-//                android:layout_marginTop="16dp"
-//                android:background="@drawable/rounded_button"
-//                android:text="Experiment - 6"
-//                android:textColor="#ffffff" />
-//
-//<Button
-//        android:id="@+id/exp7"
-//                android:layout_width="match_parent"
-//                android:layout_height="wrap_content"
-//                android:layout_marginRight="16dp"
-//                android:layout_marginLeft="16dp"
-//                android:layout_marginTop="16dp"
-//                android:background="@drawable/rounded_button"
-//                android:text="Experiment - 7"
-//                android:textColor="#ffffff" />
-//
-//<Button
-//        android:id="@+id/exp8"
-//                android:layout_width="match_parent"
-//                android:layout_height="wrap_content"
-//                android:layout_marginRight="16dp"
-//                android:layout_marginLeft="16dp"
-//                android:layout_marginTop="16dp"
-//                android:background="@drawable/rounded_button"
-//                android:text="Experiment - 8"
-//                android:textColor="#ffffff" />

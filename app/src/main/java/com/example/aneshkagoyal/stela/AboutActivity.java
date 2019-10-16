@@ -52,6 +52,7 @@ public class AboutActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String link = dataSnapshot.getValue(String.class);
                 Picasso.get().load(link).into(imageView);
+                //Picasso.get().load(link).resize(screenWidth, imageHeight).fit.centerInside().into(imageView);
             }
 
             @Override
