@@ -42,6 +42,7 @@ public class Student_dashboard extends BaseActivity {
         final TextView st_branch = (TextView) findViewById(R.id.branch);
         final TextView st_year = (TextView) findViewById(R.id.year);
         final Button registercourses = findViewById(R.id.register_courses);
+        Button regiterDevice = findViewById(R.id.register_device);
        final Spinner dropdown = findViewById(R.id.course_drop);
         auth = FirebaseAuth.getInstance();
         reff = FirebaseDatabase.getInstance().getReference().child("Student").child(auth.getCurrentUser().getUid());
@@ -96,6 +97,14 @@ public class Student_dashboard extends BaseActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Student_dashboard.this,Course.class));
+            }
+        });
+        regiterDevice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Student_dashboard.this,RegisterDeviceActivity.class));
+                finish();
+
             }
         });
     }
