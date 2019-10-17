@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-//import com.bumptech.glide.Glide;
+import com.bumptech.glide.Glide;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -32,9 +32,9 @@ public class DiagramActivity extends AppCompatActivity {
         setContentView(R.layout.activity_diagram);
 
         final String num = getIntent().getStringExtra("Expt_number");
-        Log.v("Num value in DiagramActivity is ", num);
+        Log.v("Num value in DA is ", num);
         String expt_num = "Experiment-"+num;
-        Log.v("expt_num value in DiagramActivity is ", expt_num);
+        Log.v("expt_num value in is ", expt_num);
         first = databaseReference.child("Courses").child("IoT").child(expt_num).child("Interfacing-Diagram");
 
         imageView = (ImageView) findViewById(R.id.DiagramFragment_ImageView);
@@ -55,8 +55,8 @@ public class DiagramActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String link = dataSnapshot.getValue(String.class);
-                Picasso.get().load(link).into(imageView);
-                //Glide.with(getApplicationContext()).load(link).into(imageView);
+                //Picasso.get().load(link).into(imageView);
+                Glide.with(getApplicationContext()).load(link).into(imageView);
             }
 
             @Override
