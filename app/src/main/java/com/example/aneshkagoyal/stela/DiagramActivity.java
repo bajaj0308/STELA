@@ -3,6 +3,7 @@ package com.example.aneshkagoyal.stela;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -39,6 +40,32 @@ public class DiagramActivity extends AppCompatActivity {
 
         imageView = (ImageView) findViewById(R.id.DiagramFragment_ImageView);
         Button nextButton = (Button) findViewById(R.id.ToCodeActivity);
+
+        if(num.equals("1")) {
+            Drawable res = getResources().getDrawable(R.drawable.expt_one_diagram_final);
+            imageView.setImageDrawable(res);
+        }
+        else if(num.equals("2"))
+        {
+            Drawable res = getResources().getDrawable(R.drawable.expt_two_diagram_final);
+            imageView.setImageDrawable(res);
+        }
+        else if(num.equals("3"))
+        {
+            Drawable res = getResources().getDrawable(R.drawable.expt_three_diagram_final);
+            imageView.setImageDrawable(res);
+        }
+        else if(num.equals("4"))
+        {
+            Drawable res = getResources().getDrawable(R.drawable.expt_four_diagram_final);
+            imageView.setImageDrawable(res);
+        }
+        else if(num.equals("5"))
+        {
+            Drawable res = getResources().getDrawable(R.drawable.expt_five_diagram_final);
+            imageView.setImageDrawable(res);
+        }
+
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,7 +82,7 @@ public class DiagramActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String link = dataSnapshot.getValue(String.class);
-                Picasso.get().load(link).into(imageView);
+               // Picasso.get().load(link).into(imageView);
                 //Glide.with(getApplicationContext()).load(link).into(imageView);
             }
 
@@ -67,3 +94,49 @@ public class DiagramActivity extends AppCompatActivity {
 
     }
 }
+
+
+
+
+
+//    <?xml version="1.0" encoding="utf-8"?>
+//
+//
+//<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+//        xmlns:app="http://schemas.android.com/apk/res-auto"
+//        xmlns:tools="http://schemas.android.com/tools"
+//        android:layout_width="match_parent"
+//        android:layout_height="match_parent"
+//        android:orientation="vertical"
+//        tools:context=".DiagramActivity">
+//
+//
+//<ScrollView
+//
+//        android:layout_width="match_parent"
+//                android:layout_height="wrap_content">
+//
+//<LinearLayout
+//            android:layout_width="match_parent"
+//                    android:layout_height="wrap_content"
+//                    android:orientation="vertical">
+//
+//<ImageView
+//                android:id="@+id/DiagramFragment_ImageView"
+//                        android:layout_width="fill_parent"
+//                        android:layout_height="wrap_content"
+//                        android:scaleType="fitXY"
+//                        android:src="@drawable/expt_three_about" />
+//</LinearLayout>
+//</ScrollView>
+//<Button
+//        android:id="@+id/ToCodeActivity"
+//                android:layout_width="wrap_content"
+//                android:layout_height="wrap_content"
+//                android:layout_marginLeft="300dp"
+//                android:layout_marginRight="16dp"
+//                android:layout_marginBottom="16dp"
+//                android:background="@drawable/rounded_button"
+//                android:text="Next"
+//                android:textColor="#ffffff" />
+//</LinearLayout>
