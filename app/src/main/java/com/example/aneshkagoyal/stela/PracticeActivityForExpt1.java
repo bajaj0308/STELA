@@ -1,5 +1,6 @@
 package com.example.aneshkagoyal.stela;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -40,7 +41,13 @@ String device_num ;
         vl=  ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                device_num = dataSnapshot.child("Device").getValue().toString();
+                if(dataSnapshot.hasChild("Device"))
+                 device_num = dataSnapshot.child("Device").getValue().toString();
+                else{
+                    Toast.makeText(PracticeActivityForExpt1.this,"Please go to dashboard to register",Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(PracticeActivityForExpt1.this,Student_dashboard.class));
+                    finish();
+                }
 
             }
 
