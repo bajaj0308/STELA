@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
+//import com.bumptech.glide.Glide;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -55,8 +55,8 @@ public class DiagramActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String link = dataSnapshot.getValue(String.class);
-                //Picasso.get().load(link).into(imageView);
-                Glide.with(getApplicationContext()).load(link).into(imageView);
+                Picasso.get().load(link).into(imageView);
+                //Glide.with(getApplicationContext()).load(link).into(imageView);
             }
 
             @Override

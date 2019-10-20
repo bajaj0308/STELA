@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="150dp"
             android:layout_marginRight="16dp"
             android:background="@drawable/rounded_button"
             android:text="Experiment - 1"
@@ -64,40 +64,6 @@
             android:layout_marginRight="16dp"
             android:background="@drawable/rounded_button"
             android:text="Experiment - 5"
-            android:textColor="#ffffff" />
-
-
-        <Button
-            android:id="@+id/exp6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginRight="16dp"
-            android:background="@drawable/rounded_button"
-            android:text="Experiment - 6"
-            android:textColor="#ffffff" />
-
-        <Button
-            android:id="@+id/exp7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginRight="16dp"
-            android:background="@drawable/rounded_button"
-            android:text="Experiment - 7"
-            android:textColor="#ffffff" />
-
-        <Button
-            android:id="@+id/exp8"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginRight="16dp"
-            android:background="@drawable/rounded_button"
-            android:text="Experiment - 8"
             android:textColor="#ffffff" />
 
     </LinearLayout>
