@@ -1,6 +1,7 @@
 package com.example.aneshkagoyal.stela;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -41,6 +42,7 @@ public class Student_dashboard extends BaseActivity {
         final TextView st_branch = (TextView) findViewById(R.id.branch);
         final TextView st_year = (TextView) findViewById(R.id.year);
         final Button registercourses = findViewById(R.id.register_courses);
+        Button regiterDevice = findViewById(R.id.register_device);
        final Spinner dropdown = findViewById(R.id.course_drop);
         auth = FirebaseAuth.getInstance();
         reff = FirebaseDatabase.getInstance().getReference().child("Student").child(auth.getCurrentUser().getUid());
@@ -49,6 +51,7 @@ public class Student_dashboard extends BaseActivity {
 
         reff.addValueEventListener(new ValueEventListener() {
             @Override
+            @NonNull
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nm = dataSnapshot.child("name").getValue().toString();
                 String br = dataSnapshot.child("branch").getValue().toString();
@@ -84,7 +87,7 @@ public class Student_dashboard extends BaseActivity {
         courseb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Student_dashboard.this, CourseContent.class);
+                Intent i = new Intent(Student_dashboard.this, ExperimentListTheory.class);
                 //i.putExtra("floor", "ground");
                 startActivity(i);
                 finish();
@@ -94,6 +97,14 @@ public class Student_dashboard extends BaseActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Student_dashboard.this,Course.class));
+            }
+        });
+        regiterDevice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Student_dashboard.this,RegisterDeviceActivity.class));
+                finish();
+
             }
         });
     }

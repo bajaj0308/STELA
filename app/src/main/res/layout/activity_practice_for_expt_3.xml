@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bkgcolor"
+    tools:context=".PracticeActivityForExpt3">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:text = "Ques-1  Choose the import statement(s) to include" />
+
+        <CheckBox
+            android:id="@+id/Q1_checkBox1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:text="import Adafruit.DHT11"/>
+
+        <CheckBox
+            android:id="@+id/Q1_checkBox2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:text="import time"/>
+
+        <CheckBox
+            android:id="@+id/Q1_checkBox3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:text="import RPi.GPIO as GPIO"/>
+
+        <CheckBox
+            android:id="@+id/Q1_checkBox4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:text="import sleep"/>
+
+        <CheckBox
+            android:id="@+id/Q1_checkBox5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:text="import Adafruit_DHT"/>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bordered_button"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:layout_gravity="center"
+            android:text="submit"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="15dp"
+            android:id="@+id/Q1_submit"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:layout_marginTop="16dp"
+            android:text = "Ques-2  Fill in the blanks" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/arima_madurai_medium"
+                android:text="sensor = "
+                android:layout_marginTop="12dp"
+                android:textSize="14dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/arima_madurai_medium"
+                android:text="Adafruit_"
+                android:layout_marginTop="12dp"
+                android:textSize="14dp"/>
+
+            <EditText
+                android:id="@+id/Q2_blank1"
+                android:fontFamily="@font/arima_madurai_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="module name"
+                android:textSize="14dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/arima_madurai_medium"
+                android:text="."
+                android:textSize="14dp"/>
+
+            <EditText
+                android:id="@+id/Q2_blank2"
+                android:fontFamily="@font/arima_madurai_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="sensor name"
+                android:textSize="14dp"/>
+
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bordered_button"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="15dp"
+            android:text="submit"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:id="@+id/Q2_submit"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:text="pin = 18"
+            android:layout_marginTop="12dp"
+            android:textSize="14dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:text="count = 1"
+            android:layout_marginTop="4dp"
+            android:textSize="14dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:text="while c>0:"
+            android:layout_marginTop="4dp"
+            android:textSize="14dp"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:text = "Ques-3  Write the code statement for reading humidity and temperature using sensor and pin" />
+
+        <EditText
+            android:id="@+id/Q3_blank"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:textSize="14dp"
+            android:hint="//store the temperature in 'temp' and humidity in 'hum' variable respectively"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bordered_button"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="15dp"
+            android:text="submit"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:id="@+id/Q3_submit"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:layout_marginTop="16dp"
+            android:text="Ques-4  Choose the correct option to print the temperature in celcius and humidity in % with one decimal precision"/>
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/Q4_radiob1"
+                android:layout_width="match_parent"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="@font/arima_madurai_medium"
+                android:layout_height="wrap_content"
+                android:text="print((temp*0.1) + degree C, (hum*0.1) + %"/>
+
+            <RadioButton
+                android:id="@+id/Q4_radiob2"
+                android:fontFamily="@font/arima_madurai_medium"
+                android:layout_width="match_parent"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_height="wrap_content"
+                android:text="print(format(temp, hum) with precision = 0.1)"/>
+
+            <RadioButton
+                android:id="@+id/Q4_radiob3"
+                android:fontFamily="@font/arima_madurai_medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:text="print('{0:0.1f} degree C, (1:0.1f) %.format(temp,hum))" />
+
+            <RadioButton
+                android:id="@+id/Q4_radiob4"
+                android:fontFamily="@font/arima_madurai_medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:text="print(format(temp*0.1)degree C, format(hum*0.1)%)"  />
+
+        </RadioGroup>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="submit"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/bordered_button"
+            android:layout_gravity="center"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:id="@+id/Q4_submit"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:layout_marginTop="16dp"
+            android:text="Ques-5  Write the following statements"/>
+
+        <EditText
+            android:id="@+id/Q5_blank2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:textSize="14dp"
+            android:layout_margin="20dp"
+            android:hint="//put a time gap of 1 second so as temperature, humidity can be read again"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="submit"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/bordered_button"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:id="@+id/Q5_submit"/>
+
+        <Button
+            android:id="@+id/submitInPracticeActivityForExpt3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:background="@drawable/rounded_button"
+            android:text="SUBMIT"
+            android:textColor="#ffffff" />
+    </LinearLayout>
+
+</ScrollView>

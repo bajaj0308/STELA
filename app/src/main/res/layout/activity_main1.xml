@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Main1Activity"
+    android:orientation="vertical"
+    android:background="@drawable/bkg_image">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:layout_margin="110dp"
+        android:src="@drawable/icon" />
+
+    <TextView
+        android:id="@+id/Stela"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/icon"
+        android:layout_marginTop="-100dp"
+        android:gravity="center"
+        android:text="S.T.E.L.A."
+        android:fontFamily="@font/arima_madurai_medium"
+        android:textColor="@color/neon"
+        android:textSize="45dp" />
+    <TextView
+        android:id="@+id/full_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Stela"
+        android:fontFamily="@font/arima_madurai_medium"
+        android:gravity="center"
+        android:text="Smart Teaching, Education, Learning and Assessment"
+        android:textColor="@color/neon"
+        android:textSize="15dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/paid"
+            android:text="Paid Version"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/bordered_button"
+            android:textColor="#ffffff"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/trial"
+            android:text="Trial Version"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/bordered_button"
+            android:textColor="#ffffff"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

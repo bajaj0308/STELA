@@ -5,26 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bkgcolor"
-    tools:context=".ForgotPasswordActivity">
-
+    tools:context=".RegisterDeviceActivity">
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Device Number"
         android:layout_margin="20dp"
-        android:layout_above="@id/pass_reset"
+        android:layout_above="@id/reg_dev"
         android:fontFamily="@font/arima_madurai_medium"
-        android:hint="Enter Registered Email"
-        android:id="@+id/forgotpassemail"/>
+        android:id="@+id/device_num"
+        />
 
     <Button
+        android:layout_centerVertical="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
         android:background="@drawable/rounded_button"
         android:fontFamily="@font/arima_madurai_medium"
         android:textColor="#ffffff"
-        android:layout_centerVertical="true"
-        android:text="Send Password Reset Link"
-        android:id="@+id/pass_reset"/>
+        android:id="@+id/reg_dev"
+        android:text="Submit"/>
 
 </RelativeLayout>

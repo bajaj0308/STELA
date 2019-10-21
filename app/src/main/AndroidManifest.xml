@@ -13,25 +13,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".PracticeActivityForExpt3"></activity>
+        <activity android:name=".PracticeActivityForExpt1" />
+        <activity android:name=".DiagramActivity" />
+        <activity android:name=".CodeActivity" />
+        <activity android:name=".AboutActivity" />
+        <activity android:name=".ExperimentListTheory" />
         <activity android:name=".BaseActivity" />
-        <activity android:name=".CodeFragment" />
-        <activity android:name=".DiagramFragment" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".Student" />
         <activity android:name=".Faculty" />
         <activity android:name=".Course" />
         <activity android:name=".Student_dashboard" />
         <activity android:name=".CourseContent" />
-        <activity android:name=".Theoretical" />
-        <activity android:name=".AboutFragment" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Main1Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ForgotPasswordActivity"></activity>
+        <activity android:name=".ForgotPasswordActivity" />
+        <activity android:name=".RegisterDeviceActivity" />
     </application>
 
 </manifest>

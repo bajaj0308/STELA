@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#436361</color>
-    <color name="colorPrimaryDark">#1a2726</color>
-    <color name="colorAccent">#283b3a</color>
+    <color name="colorPrimary">#182344</color>
+    <color name="colorPrimaryDark">#0b0c10</color>
+    <color name="colorAccent">#e91e63</color>
+    <color name="bkgcolor">#e6eaf6</color>
+    <color name="headings">#0b0c10</color>
+    <color name="answers">#aa1145</color>
+    <color name="blue">#123C69</color>
+    <color name="dull_pink">#cc1452</color>
+    <color name="neon">#66fcf1</color>
 </resources>
