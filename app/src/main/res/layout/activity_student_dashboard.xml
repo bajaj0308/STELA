@@ -150,23 +150,33 @@
             android:spinnerMode="dropdown"></android.support.v7.widget.AppCompatSpinner>
 
     </LinearLayout>
-
-    <Button
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_margin="30dp"
+        android:orientation="horizontal">
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:text="Register Courses"
         android:fontFamily="@font/arima_madurai_medium"
-        android:layout_margin="30dp"
         android:background="@drawable/rounded_button"
         android:textColor="#ffffff"
-        android:layout_centerHorizontal="true"
+        android:layout_marginRight="10dp"
         android:id="@+id/register_courses"/>
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="1"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/arima_madurai_medium"
+        android:background="@drawable/rounded_button"
+        android:layout_marginLeft="10dp"
+        android:textColor="#ffffff"
         android:id="@+id/register_device"
         android:text="Register Device"/>
-
+    </LinearLayout>
 
 </RelativeLayout>
