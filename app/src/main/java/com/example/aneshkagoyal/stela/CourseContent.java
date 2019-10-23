@@ -73,14 +73,14 @@ public class CourseContent extends BaseActivity {
             });
         }
 
-//        assessment.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i = new Intent(CourseContent.this, EXperimentListAssessment.class);
-//                //i.putExtra("floor", "ground");
-//                startActivity(i);
-//            }
-//        });
+        assessment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(CourseContent.this, AssessmentActivityForExpt1.class);
+                //i.putExtra("floor", "ground");
+                startActivity(i);
+            }
+        });
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
