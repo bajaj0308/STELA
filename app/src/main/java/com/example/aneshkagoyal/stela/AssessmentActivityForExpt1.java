@@ -34,7 +34,7 @@ import java.util.Map;
 
 public class AssessmentActivityForExpt1 extends AppCompatActivity {
     Button submit;
-    DatabaseReference reff;
+    DatabaseReference reff,ref2;
     String nm,br,yr,enroll;
     Map<String,Object> mp;
     int marks;
@@ -54,6 +54,10 @@ public class AssessmentActivityForExpt1 extends AppCompatActivity {
         email_add = new String[1];
 
         reff = FirebaseDatabase.getInstance().getReference().child("Student").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        ref2 = FirebaseDatabase.getInstance().getReference().child("Student").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Course").child("121");
+        Map<String,Object>mp2 = new HashMap<>();
+        mp2.put("Exp"+num,"0");
+        ref2.updateChildren(mp2);
         reff.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -141,7 +145,9 @@ public class AssessmentActivityForExpt1 extends AppCompatActivity {
                 }
 
                 mp.put("Exp"+num,marks);
-                reff.updateChildren(mp);
+
+                ref2.updateChildren(mp);
+                //ref2.updateChildren(mp2);
                 createpdf(nm,br,yr,enroll,marks);
 
                 Toast.makeText(AssessmentActivityForExpt1.this,nm,Toast.LENGTH_SHORT).show();
@@ -194,7 +200,7 @@ public class AssessmentActivityForExpt1 extends AppCompatActivity {
 
 
         document.finishPage(mypage);
-        String filepath = Environment.getExternalStorageDirectory().getPath()+"/myreportcard1.pdf";
+        String filepath = Environment.getExternalStorageDirectory().getPath()+"/myreportcard"+erol+".pdf";
         Log.d("PDF IS HERE",filepath);
         File myfile = new File(filepath);
         try{
