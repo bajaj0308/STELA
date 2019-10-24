@@ -1,18 +1,357 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bkgcolor"
     tools:context=".AssessmentActivityForExpt1">
 
-    <Button
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="242dp"
-        android:id="@+id/submit_assess"
-        android:text="Submit"/>
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical">
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/interfacing_diagram"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:text="Write the pin names and numbers of the raspberry pi to connect to the two terminals of the LED for interfacing LED with Raspberry Pi module" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:src="@drawable/rpi_module" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/arima_madurai_medium"
+                    android:text="(A)"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="26dp"
+                    android:fontFamily="@font/arima_madurai_medium"
+                    android:text="(B)"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/IFD_blank1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/arima_madurai_medium"
+                    android:hint="pin_name"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/IFD_blank2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/arima_madurai_medium"
+                    android:hint="pin_name"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/IFD_blank3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/arima_madurai_medium"
+                    android:hint="pin_No."
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/IFD_blank4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/arima_madurai_medium"
+                    android:hint="pin_No."
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="150dp"
+                android:src="@drawable/led_module" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:text="Ques-1  Choose the import statement(s) to include" />
+
+        <CheckBox
+            android:id="@+id/Q1_checkBox1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:text="import Raspberry Pi as GPIO" />
+
+        <CheckBox
+            android:id="@+id/Q1_checkBox2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:text="import time" />
+
+        <CheckBox
+            android:id="@+id/Q1_checkBox3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:text="import RPi.GPIO as GPIO" />
+
+        <CheckBox
+            android:id="@+id/Q1_checkBox4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:text="import sleep" />
+
+        <CheckBox
+            android:id="@+id/Q1_checkBox5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:text="import rasp.pi as GPIO" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:text="Ques-2  Fill in the blanks" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/arima_madurai_medium"
+                android:text="GPIO."
+                android:textSize="14dp" />
+
+            <EditText
+                android:id="@+id/Q2_blank1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/arima_madurai_medium"
+                android:hint="function"
+                android:textSize="14dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/arima_madurai_medium"
+                android:text="(GPIO."
+                android:textSize="14dp" />
+
+            <EditText
+                android:id="@+id/Q2_blank2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/arima_madurai_medium"
+                android:hint="blank"
+                android:textSize="14dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/arima_madurai_medium"
+                android:text=")"
+                android:textSize="14dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/arima_madurai_medium"
+                android:text="GPIO."
+                android:textSize="14dp" />
+
+            <EditText
+                android:id="@+id/Q2_blank3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/arima_madurai_medium"
+                android:hint="function"
+                android:textSize="14dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/arima_madurai_medium"
+                android:text="(18,GPIO."
+                android:textSize="14dp" />
+
+            <EditText
+                android:id="@+id/Q2_blank4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/arima_madurai_medium"
+                android:hint="blank"
+                android:textSize="14dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/arima_madurai_medium"
+                android:text=")"
+                android:textSize="14dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:text="Ques-3  Write the code" />
+
+        <EditText
+            android:id="@+id/Q3_blank"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:hint="//turn ON the LED on the GPIO pin"
+            android:textSize="14dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:text="Ques-4  Choose the correct option" />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/Q4_radiob1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/arima_madurai_medium"
+                android:text="time.sleep(1)" />
+
+            <RadioButton
+                android:id="@+id/Q4_radiob2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/arima_madurai_medium"
+                android:text="Time.snooze(1)" />
+
+            <RadioButton
+                android:id="@+id/Q4_radiob3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/arima_madurai_medium"
+                android:text="Time.sleep(1)" />
+
+            <RadioButton
+                android:id="@+id/Q4_radiob4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/arima_madurai_medium"
+                android:text="time.snooze(1)" />
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:text="Ques-5  Write the following statements" />
+
+        <EditText
+            android:id="@+id/Q5_blank1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:hint="//turn OFF the LED on the GPIO pin"
+            android:textSize="14dp" />
+
+        <EditText
+            android:id="@+id/Q5_blank2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:hint="//put a time gap of 1 second"
+            android:textSize="14dp" />
+
+        <Button
+            android:id="@+id/submit_assess"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:text="SUBMIT"
+            android:textColor="#ffffff" />
+
+    </LinearLayout>
+</ScrollView>
+
+
+
