@@ -194,7 +194,7 @@ public class AssessmentActivityForExpt1 extends AppCompatActivity {
 
 
         document.finishPage(mypage);
-        String filepath = Environment.getExternalStorageDirectory().getPath()+"/myreportcard1.pdf";
+        String filepath = Environment.getExternalStorageDirectory().getPath()+"/myreportcard"+erol+".pdf";
         Log.d("PDF IS HERE",filepath);
         File myfile = new File(filepath);
         try{

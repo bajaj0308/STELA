@@ -1,9 +1,12 @@
 package com.example.aneshkagoyal.stela;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -25,7 +28,7 @@ public class CodeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_code);
 
-        String num = getIntent().getStringExtra("Expt_number");
+        final String num = getIntent().getStringExtra("Expt_number");
         Log.v("Num value in CodeActivity is ", num);
         String expt_num = "Experiment-"+num;
         Log.v("expt_num value in CodeActivity is ", expt_num);
@@ -56,6 +59,28 @@ public class CodeActivity extends AppCompatActivity {
             imageView.setImageDrawable(res);
         }
 
+        Button backButton = (Button) findViewById(R.id.Code_back);
+        Button homeButton = (Button) findViewById(R.id.Code_home);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(CodeActivity.this, DiagramActivity.class);
+                //i.putExtra("floor", "ground");
+                i.putExtra("Expt_number", num);
+                startActivity(i);
+                finish();
+            }
+        });
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(CodeActivity.this, ExperimentListTheory.class);
+                //i.putExtra("floor", "ground");
+                // i.putExtra("Expt_number", num);
+                startActivity(i);
+                finish();
+            }
+        });
 
         //TODO : set image for imageview by fetching data from firebase
         //Creating connection with database

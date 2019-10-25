@@ -39,8 +39,6 @@ public class DiagramActivity extends AppCompatActivity {
         first = databaseReference.child("Courses").child("IoT").child(expt_num).child("Interfacing-Diagram");
 
         imageView = (ImageView) findViewById(R.id.DiagramFragment_ImageView);
-        Button nextButton = (Button) findViewById(R.id.ToCodeActivity);
-
         if(num.equals("1")) {
             Drawable res = getResources().getDrawable(R.drawable.expt_one_diagram_final);
             imageView.setImageDrawable(res);
@@ -66,13 +64,38 @@ public class DiagramActivity extends AppCompatActivity {
             imageView.setImageDrawable(res);
         }
 
-        nextButton.setOnClickListener(new View.OnClickListener() {
+
+        Button backButton = (Button) findViewById(R.id.Diagram_back);
+        Button homeButton = (Button) findViewById(R.id.Diagram_home);
+        Button nextButton = (Button) findViewById(R.id.Diagram_next);
+        backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(DiagramActivity.this, CodeActivity.class);
+                Intent i = new Intent(DiagramActivity.this, AboutActivity.class);
                 //i.putExtra("floor", "ground");
                 i.putExtra("Expt_number", num);
                 startActivity(i);
+                finish();
+            }
+        });
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(DiagramActivity.this, ExperimentListTheory.class);
+                //i.putExtra("floor", "ground");
+                // i.putExtra("Expt_number", num);
+                startActivity(i);
+                finish();
+            }
+        });
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(DiagramActivity.this,CodeActivity.class);
+                //i.putExtra("floor", "ground");
+                i.putExtra("Expt_number", num);
+                startActivity(i);
+                finish();
             }
         });
 

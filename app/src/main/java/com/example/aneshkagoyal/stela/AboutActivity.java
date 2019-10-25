@@ -39,7 +39,6 @@ public class AboutActivity extends AppCompatActivity {
         Log.v("expt_num value in AboutActivity is ", expt_num);
         first = databaseReference.child("Courses").child("IoT").child(expt_num).child("About");
         imageView = (ImageView) findViewById(R.id.DiagramFragment_ImageView);
-        Button nextButton = (Button) findViewById(R.id.ToDiagramActivity);
         if(num.equals("1")) {
             Drawable res = getResources().getDrawable(R.drawable.expt_one_about_final);
             imageView.setImageDrawable(res);
@@ -64,7 +63,29 @@ public class AboutActivity extends AppCompatActivity {
             Drawable res = getResources().getDrawable(R.drawable.expt_five_about_final);
             imageView.setImageDrawable(res);
         }
-
+        Button backButton = (Button) findViewById(R.id.About_back);
+        Button homeButton = (Button) findViewById(R.id.About_home);
+        Button nextButton = (Button) findViewById(R.id.About_next);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(AboutActivity.this, CourseContent.class);
+                //i.putExtra("floor", "ground");
+                i.putExtra("Expt Number", num);
+                startActivity(i);
+                finish();
+            }
+        });
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(AboutActivity.this, ExperimentListTheory.class);
+                //i.putExtra("floor", "ground");
+                // i.putExtra("Expt_number", num);
+                startActivity(i);
+                finish();
+            }
+        });
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,8 +93,10 @@ public class AboutActivity extends AppCompatActivity {
                 //i.putExtra("floor", "ground");
                 i.putExtra("Expt_number", num);
                 startActivity(i);
+                finish();
             }
         });
+
 
         //TODO : set image for imageview by fetching data from firebase
         //Creating connection with database
