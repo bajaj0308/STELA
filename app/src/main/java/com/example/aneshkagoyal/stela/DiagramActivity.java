@@ -40,7 +40,7 @@ public class DiagramActivity extends AppCompatActivity {
 
         imageView = (ImageView) findViewById(R.id.DiagramFragment_ImageView);
         if(num.equals("1")) {
-            Drawable res = getResources().getDrawable(R.drawable.expt_one_diagram_final);
+            Drawable res = getResources().getDrawable(R.drawable.expt_one_diagram_b);
             imageView.setImageDrawable(res);
         }
         else if(num.equals("2"))

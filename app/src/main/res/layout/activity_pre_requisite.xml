@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PreRequisiteActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textSize="20sp"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:text="The Pin diagram for raspberry Pi 3 is as follows. The pin diagram of Raspberry Pi should be clearly understood before making the connections." />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/rpi_pin_diagram_five" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="20sp"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:text="1. All the hardware connections should be made before starting the practical." />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:textSize="20sp"
+            android:text="2. Power to the raspberry pi should be given using the USB power cable. To use the board, the power to the board should be supplied at least five minutes before the execution of the program." />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:textSize="20sp"
+            android:text="3. For using GPIO pin always use GPIO18 pin as input or output."
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp"
+            android:fontFamily="@font/arima_madurai_medium"
+            android:textSize="20sp"
+            android:text="4. For taking assessment the student must have a safe and steady internet connection, otherwise the marks of the submission will not be considered."
+            />
+    </LinearLayout>
+</ScrollView>

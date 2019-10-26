@@ -210,7 +210,5 @@ public class AssessmentActivityForExpt1 extends AppCompatActivity {
             e.printStackTrace();
         }
         document.close();
-
-
     }
 }

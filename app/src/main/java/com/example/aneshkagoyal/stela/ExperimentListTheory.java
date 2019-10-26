@@ -14,6 +14,7 @@ public class ExperimentListTheory extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_experiment_list_theory);
+        Button prequisite = (Button) findViewById(R.id.preq);
         Button expt1 = (Button) findViewById(R.id.exp1);
         Button expt2 = (Button) findViewById(R.id.exp2);
         Button expt3 = (Button) findViewById(R.id.exp3);
@@ -22,6 +23,15 @@ public class ExperimentListTheory extends AppCompatActivity {
 //        Button expt6 = (Button) findViewById(R.id.exp6);
 //        Button expt7 = (Button) findViewById(R.id.exp7);
 //        Button expt8 = (Button) findViewById(R.id.exp8);
+
+        prequisite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(ExperimentListTheory.this, PreRequisiteActivity.class);
+                //i.putExtra("Expt Number", "1");
+                startActivity(i);
+            }
+        });
         expt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
