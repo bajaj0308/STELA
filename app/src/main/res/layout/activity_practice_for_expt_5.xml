@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/arima_madurai_medium"
-            android:text="import Adafruit.DHT11"/>
+            android:text="import adxl345"/>
 
         <CheckBox
             android:id="@+id/Q1_checkBox2"
@@ -85,15 +85,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/arima_madurai_medium"
-                android:text="sensor = "
-                android:layout_marginTop="12dp"
-                android:textSize="14dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:fontFamily="@font/arima_madurai_medium"
-                android:text="Adafruit_"
+                android:text="accelerometer = "
                 android:layout_marginTop="12dp"
                 android:textSize="14dp"/>
 
@@ -139,14 +131,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/arima_madurai_medium"
-            android:text="pin = 18"
-            android:layout_marginTop="12dp"
-            android:textSize="14dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/arima_madurai_medium"
             android:text="count = 1"
             android:layout_marginTop="4dp"
             android:textSize="14dp"/>
@@ -155,7 +139,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/arima_madurai_medium"
-            android:text="while c>0:"
+            android:text="while(c>0):"
             android:layout_marginTop="4dp"
             android:textSize="14dp"/>
 
@@ -165,7 +149,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/arima_madurai_medium"
-            android:text = "Ques-3  Write the code statement for reading humidity and temperature using sensor and pin" />
+            android:text = "Ques-3  Write the code statement for getting the axes to determine the acceleration" />
 
         <EditText
             android:id="@+id/Q3_blank"
@@ -174,7 +158,7 @@
             android:layout_margin="20dp"
             android:fontFamily="@font/arima_madurai_medium"
             android:textSize="14dp"
-            android:hint="//store the temperature in 'temp' and humidity in 'hum' variable respectively"/>
+            android:hint="//store the axes in 'axes' variable"/>
 
         <Button
             android:layout_width="wrap_content"
@@ -190,9 +174,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/arima_madurai_medium"
             android:layout_marginTop="16dp"
-            android:text="Ques-4  Choose the correct option to print the temperature in celcius and humidity in % with one decimal precision"/>
+            android:fontFamily="@font/arima_madurai_medium"
+            android:text="Ques-4  Choose the correct option to print the coordinates of the axes" />
 
         <RadioGroup
             android:layout_width="wrap_content"
@@ -261,7 +245,7 @@
             android:fontFamily="@font/arima_madurai_medium"
             android:textSize="14dp"
             android:layout_margin="20dp"
-            android:hint="//put a time gap of 1 second so as temperature, humidity can be read again"/>
+            android:hint="//put a time gap of 5 second so that axes can be read again"/>
 
         <Button
             android:layout_width="wrap_content"
@@ -275,7 +259,7 @@
             android:id="@+id/Q5_submit"/>
 
         <Button
-            android:id="@+id/submitInPracticeActivityForExpt3"
+            android:id="@+id/submitInPracticeActivityForExpt5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
