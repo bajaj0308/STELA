@@ -93,6 +93,28 @@ boolean has;
                     startActivity(i);
                 }
             });
+        } else if (num.equals("4")) {
+            practiceb.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //String nextScreen = "PracticeActivityForExpt";
+                    String num = getIntent().getStringExtra("Expt Number");
+                    Intent i = new Intent(CourseContent.this, PracticeActivityForExpt4.class);
+                    i.putExtra("Expt_number", num);
+                    startActivity(i);
+                }
+            });
+        } else if (num.equals("5")) {
+            practiceb.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //String nextScreen = "PracticeActivityForExpt";
+                    String num = getIntent().getStringExtra("Expt Number");
+                    Intent i = new Intent(CourseContent.this, PracticeActivityForExpt5.class);
+                    i.putExtra("Expt_number", num);
+                    startActivity(i);
+                }
+            });
         }
 
 

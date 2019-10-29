@@ -34,7 +34,6 @@ public class PracticeActivityForExpt2 extends AppCompatActivity {
     Object device_num;
     Map mp = new HashMap<String,Object>();
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +49,6 @@ public class PracticeActivityForExpt2 extends AppCompatActivity {
         q5_s = (Button) findViewById(R.id.Q5_submit);
         ref = FirebaseDatabase.getInstance().getReference().child("Student").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
         ref2 = FirebaseDatabase.getInstance().getReference().child("Rpi");
-
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
