@@ -77,7 +77,7 @@ boolean has;
                 public void onClick(View view) {
                     //String nextScreen = "PracticeActivityForExpt";
                     String num = getIntent().getStringExtra("Expt Number");
-                    Intent i = new Intent(CourseContent.this, PracticeActivityForExpt3.class);
+                    Intent i = new Intent(CourseContent.this, PracticeActivityForExpt2.class);
                     i.putExtra("Expt_number", num);
                     startActivity(i);
                 }
