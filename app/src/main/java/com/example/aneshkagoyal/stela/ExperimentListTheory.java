@@ -8,7 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-public class ExperimentListTheory extends AppCompatActivity {
+public class ExperimentListTheory extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

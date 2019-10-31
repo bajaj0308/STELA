@@ -3,6 +3,8 @@ package com.example.aneshkagoyal.stela;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,7 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class RegisterDeviceActivity extends AppCompatActivity {
+public class RegisterDeviceActivity extends BaseActivity {
 EditText dev_num;
 Button submit;
 DatabaseReference ref;
@@ -74,5 +76,16 @@ ValueEventListener val;
         super.onPause();
         ref.removeEventListener(val);
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        super.onCreateOptionsMenu(menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return super.onOptionsItemSelected(item);
     }
 }
